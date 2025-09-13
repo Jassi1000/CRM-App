@@ -87,7 +87,7 @@ app.post("/api/v1/delivery-receipt", deliveryReceipt);
 //   res.json({ message: `Welcome ${req.user.name} to your dashboard!` });
 // });
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+app.listen(process.env.PORT || 4000, () => console.log('Server running on port 5000'));
 
 
 
