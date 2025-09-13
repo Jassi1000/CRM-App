@@ -18,7 +18,7 @@ const LaunchCampaign = ({ emails }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/launch-campaign",
+        "https://crm-backend-bhuu.onrender.com/api/v1/launch-campaign",
         { emails, subject, message },
         { withCredentials: true }
       );
