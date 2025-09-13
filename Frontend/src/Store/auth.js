@@ -30,7 +30,7 @@ export const useAuthStore = create((set, get) => ({
   logout: async () => {
     set({ loading: true });
     try {
-      await axios.get('http://localhost:5000/auth/logout', { withCredentials: true });
+      await axios.get('https://crm-backend-bhuu.onrender.com/auth/logout', { withCredentials: true });
       set({ user: null, isAuthenticated: false });
     } catch (error) {
       console.error("Logout Error:", error);
