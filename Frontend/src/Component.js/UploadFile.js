@@ -25,7 +25,7 @@ const UploadFile = () => {
 
     try {
       setUploading(true);
-      const res = await axios.post("http://localhost:5000/api/v1/upload-excel", formData, {
+      const res = await axios.post("https://crm-backend-bhuu.onrender.com/api/v1/upload-excel", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
