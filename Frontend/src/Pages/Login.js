@@ -5,7 +5,7 @@ import login from '../assets/login.png';
 const Login = () => {
   const handleGoogleLogin = () => {
     // Redirect user to backend Google OAuth route
-    window.location.href = 'http://localhost:5000/auth/google';
+    window.location.href = 'https://crm-backend-bhuu.onrender.com/auth/google';
   };
 
   return (
