@@ -8,7 +8,7 @@ const CampaignHistory = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/campaigns/history", {
+        const res = await axios.get("https://crm-backend-bhuu.onrender.com/api/v1/campaigns/history", {
           withCredentials: true,
         });
         setCampaigns(res.data);
