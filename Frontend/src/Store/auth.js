@@ -10,7 +10,7 @@ export const useAuthStore = create((set, get) => ({
   checkAuth: async () => {
     set({ loading: true });
     try {
-      const response = await axios.get('http://localhost:5000/auth/me', { withCredentials: true });
+      const response = await axios.get('https://crm-backend-bhuu.onrender.com/auth/me', { withCredentials: true });
       if (response.data.loggedIn) {
         set({ user: response.data.user, isAuthenticated: true });
         console.log("User is authenticated:", response.data.user);
