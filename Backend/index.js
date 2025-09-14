@@ -32,8 +32,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false, // true only if HTTPS in production
-    sameSite: 'lax' // or 'none' if HTTPS + cross-origin
+    secure: true, // true only if HTTPS in production
+    sameSite: 'none' // or 'none' if HTTPS + cross-origin
   }
 }));
 
