@@ -26,16 +26,16 @@ app.use(cors({
   credentials: true // allow cookies
 }));
 
-// Session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: true, // true only if HTTPS in production
-    sameSite: 'none' // or 'none' if HTTPS + cross-origin
+    secure: process.env.NODE_ENV === "production",   // true on Render (HTTPS)
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
   }
 }));
+
 
 // Passport initialization
 app.use(passport.initialize());
