@@ -50,15 +50,39 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />}
+          element={loading ? (
+        <div className='flex items-center justify-center h-screen w-full'>
+    <div class = "spinner"></div>
+  </div>
+      ) : isAuthenticated ? (
+        <Navigate to="/dashboard" />
+      ) : (
+        <Login />
+      )}
         />
         <Route
           path="/dashboard"
-          element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}
+          element={loading ? (
+        <div className='flex items-center justify-center h-screen w-full'>
+    <div class = "spinner"></div>
+  </div>
+      ) : isAuthenticated ? (
+        <Dashboard />
+      ) : (
+        <Navigate to="/" />
+      )}
         />
         <Route
           path="/campaigns-history"
-          element={isAuthenticated ? <CampaignHistory /> : <Navigate to="/" />}
+          element={loading ? (
+        <div className='flex items-center justify-center h-screen w-full'>
+    <div class = "spinner"></div>
+  </div>
+      ) : isAuthenticated ? (
+        <CampaignHistory />
+      ) : (
+        <Navigate to="/" />
+      )}
         />
       </Routes>
     </div>
