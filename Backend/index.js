@@ -67,9 +67,10 @@ passport.use(new GoogleStrategy({
         email: profile.emails[0].value
       });
     }
-    done(null, user);
+    return done(null, user);
   } catch (err) {
-    done(err, null);
+    console.error("GoogleStrategy error:", err);
+    return done(err, null);
   }
 }));
 
