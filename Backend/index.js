@@ -33,7 +33,6 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    httpOnly:true,
     secure: true,   // true on Render (HTTPS)
     sameSite:"none",
   }
