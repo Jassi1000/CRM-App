@@ -17,8 +17,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// Trust proxy (important for Render / HTTPS)
-app.set("trust proxy", 1);
+
 
 // Connect MongoDB
 connectDB();
@@ -34,8 +33,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
+    httpOnly:true,
     secure: process.env.NODE_ENV === "production",   // true on Render (HTTPS)
-    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
+    sameSite: process.env.NODE_ENV === "production" ? "None" : "lax"
   }
 }));
 
