@@ -34,8 +34,8 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly:true,
-    secure: process.env.NODE_ENV === "production",   // true on Render (HTTPS)
-    sameSite: process.env.NODE_ENV === "production" ? "None" : "lax"
+    secure: true,   // true on Render (HTTPS)
+    sameSite:"none",
   }
 }));
 
