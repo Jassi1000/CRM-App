@@ -17,6 +17,9 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+// Trust proxy (important for Render / HTTPS)
+app.set("trust proxy", 1);
+
 // Connect MongoDB
 connectDB();
 
