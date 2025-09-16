@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-
+app.set("trust proxy", 1);  // add this line
 
 // Connect MongoDB
 connectDB();
@@ -32,9 +32,11 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  proxy: true,
   cookie: {
-    secure: true,   // true on Render (HTTPS)
-    sameSite:"none",
+    secure: true,
+    httpOnly: true,
+    sameSite: "none"
   }
 }));
 
